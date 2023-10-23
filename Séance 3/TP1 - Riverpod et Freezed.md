@@ -3,6 +3,10 @@
 ## Introduction
 Bienvenue dans ce TP où nous plongerons profondément dans la gestion des états avec Riverpod et la modélisation avec Freezed. Vous allez découvrir comment ces outils peuvent simplifier votre développement avec Flutter et améliorer la structure de votre code.
 
+## Partie 0 : Documentation de Riverpod
+
+Afin de comprendre ce qu'est Riverpod et son intérêt, vous pouvez lire la documentation : 
+
 ## Partie 1: Introduction à Riverpod et Freezed 🌊
 **Durée estimée: 30min**
 
