@@ -22,6 +22,7 @@ L'objectif de cette partie est de vous donner une compréhension approfondie de 
 1. **Ajout de Permissions dans `AndroidManifest.xml` et `Info.plist`**:
    - Ajoutez la permission de localisation dans `AndroidManifest.xml`:
      ```xml
+     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
      ```
    - Ajoutez la description de la permission dans `Info.plist` pour iOS:
