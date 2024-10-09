@@ -1,6 +1,6 @@
 # Cours de Développement Mobile avec Flutter
 
-Bienvenue dans le repository du cours de Développement Mobile avec Flutter pour les étudiants en Bachelor 3 spécialité informatique.
+Bienvenue dans le repository du cours de Développement Mobile avec Flutter
 
 ## Objectifs du Cours
 
