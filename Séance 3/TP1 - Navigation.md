@@ -2,13 +2,14 @@
 
 Bienvenue à cette session de travaux pratiques ! Aujourd'hui, nous allons explorer l'un des aspects fondamentaux de toute application mobile : la **navigation** et le **routage**. Prêt à naviguer dans le monde merveilleux de Flutter ? 🛶
 
-Bien sûr, voyons cela ! 
+Bien sûr, voyons cela !
 
 ---
 
 ## Partie 1: Création d'une page de détails et navigation basique 📄➡️📄
 
 ### Objectifs
+
 - Initialiser un nouveau projet Flutter.
 - Comprendre la structure basique d'une nouvelle page dans Flutter.
 - Savoir comment naviguer vers une nouvelle page et revenir à la précédente.
@@ -16,12 +17,15 @@ Bien sûr, voyons cela !
 ### Étapes
 
 1. **Initialisation du nouveau projet**
-   
+
    Ouvrez votre terminal ou invite de commandes et entrez:
+
    ```
    flutter create mon_app_navigation
    ```
+
    Puis, naviguez dans le répertoire du projet:
+
    ```
    cd mon_app_navigation
    ```
@@ -37,11 +41,13 @@ Bien sûr, voyons cela !
 4. **Définition de la page de détails**
 
    Dans `detail_page.dart`, créez une nouvelle `StatefulWidget` appelée `DetailPage`. Assurez-vous d'importer le package Flutter nécessaire en haut du fichier:
+
    ```dart
    import 'package:flutter/material.dart';
    ```
 
    Structure de `DetailPage` :
+
    ```dart
    class DetailPage extends StatefulWidget {
        @override
@@ -66,11 +72,13 @@ Bien sûr, voyons cela !
 5. **Navigation depuis la page principale**
 
    Retournez à `lib/main.dart`. Assurez-vous d'importer votre `detail_page.dart` en haut du fichier:
+
    ```dart
    import 'pages/detail_page.dart';
    ```
 
-   Dans votre `MyApp` widget (ou équivalent, si vous avez renommé la classe de démarrage), ajoutez un bouton. Lorsque ce bouton est pressé, il devrait naviguer vers `DetailPage`:
+   Dans votre `MyApp` widget (ou équivalent, si vous avez renommé la classe de démarrage), ajoutez nouveau widget avec un bouton. Lorsque ce bouton est pressé, il devrait naviguer vers `DetailPage`:
+
    ```dart
    ElevatedButton(
        child: Text('Aller à la page de détails'),
@@ -90,26 +98,32 @@ Bien sûr, voyons cela !
 ---
 
 ## Partie 2: Passage de données entre les pages
+
 **Durée estimée**: 1 heure et 15 minutes ⏳
 
 ### Objectifs
+
 - Comprendre comment envoyer des données d'un écran à un autre.
 - Utiliser les données transmises pour afficher un contenu dynamique.
 
 ### Étapes
 
 1. **Mise à jour de `DetailPage`** :
+
    - Commencez par modifier le constructeur de `DetailPage` pour qu'il accepte une chaîne en tant que paramètre.
+
    ```dart
    class DetailPage extends StatefulWidget {
        final String message;
-       
+
        DetailPage({required this.message});
-       
+
        // Reste du code...
    }
    ```
+
    - Ensuite, à l'intérieur du widget `State`, utilisez cette variable pour afficher le message reçu.
+
    ```dart
    @override
    Widget build(BuildContext context) {
@@ -123,7 +137,9 @@ Bien sûr, voyons cela !
    ```
 
 2. **Passage des données depuis `main.dart`** :
+
    - Dans le bouton de votre page principale (`main.dart`), lors de la navigation, passez une chaîne en tant qu'argument à `DetailPage`.
+
    ```dart
    ElevatedButton(
        child: Text('Aller à la page de détails'),
@@ -139,6 +155,7 @@ Bien sûr, voyons cela !
    ```
 
 3. **Validation** :
+
    - Lancez votre application et cliquez sur le bouton pour naviguer vers `DetailPage`.
    - Assurez-vous que le message "Salut de la page principale!" s'affiche bien au centre de `DetailPage`.
 
@@ -150,6 +167,7 @@ Bien sûr, voyons cela !
 ## Partie 3: Utilisation du routage nommé pour une navigation structurée
 
 ### Objectifs
+
 - Apprendre les avantages du routage nommé pour une meilleure structure et une meilleure lisibilité.
 - Mettre en œuvre le routage nommé pour naviguer entre plusieurs pages.
 - Gérer les routes inconnues ou non définies.
@@ -157,7 +175,7 @@ Bien sûr, voyons cela !
 ### Étapes
 
 1. **Configuration initiale des routes**
-   
+
    Commencez par définir une map des routes dans votre `MaterialApp` dans `main.dart`. Cette map associe un nom de route (chaîne de caractères) à une fonction de construction de page.
 
    ```dart
@@ -174,7 +192,7 @@ Bien sûr, voyons cela !
 
 2. **Naviguer vers une nouvelle page**
 
-   Pour naviguer en utilisant le routage nommé, vous allez remplacer votre ancienne méthode de navigation par `Navigator.pushNamed()`. 
+   Pour naviguer en utilisant le routage nommé, vous allez remplacer votre ancienne méthode de navigation par `Navigator.pushNamed()`.
 
    Mettez à jour le code de votre bouton comme suit :
 
